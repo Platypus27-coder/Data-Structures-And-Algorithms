@@ -1,1 +1,2 @@
 # I'm noob
+https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzkwOWdyMGIxZXN5eGkzMHRjaHptazFjMTB2eW4xdjgya283MGk1MCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/6FWpozKBgrQD4MZwDC/giphy.webp
