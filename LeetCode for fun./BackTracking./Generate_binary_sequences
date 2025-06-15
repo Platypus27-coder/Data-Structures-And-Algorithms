@@ -1,4 +1,7 @@
 // Generate all binary sequences of length n
+#include<bits/stdc++.h>
+using namespace std;
+
 int X[100], n;
 
 void Try(int i) {
