@@ -1,4 +1,6 @@
 // Generate all combinations of k elements chosen from 1..n
+#include<bits/stdc++.h>
+using namespace std;
 
 int X[100], n, k;
 
