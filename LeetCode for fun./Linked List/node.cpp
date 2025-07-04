@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 #include <stdlib.h>
 #include <cmath>
 #include <string.h>
@@ -132,5 +132,21 @@ void selectionsort(node &head) {
         int tmp = min->data;
         min->data = i->data;
         i->data = tmp;
+    }
+}
+
+void REVERSE(node &head) {
+    vector<int> v;
+    node p = head;
+    while(p!= NULL) {
+        v.push_back(p->data);
+        p = p->next;
+    }
+    reverse(v.begin(), v.end());
+    node tmp = head;
+    int id = 0;
+    while(tmp != NULL) {
+        tmp->data = v[id++];
+        tmp = tmp->next;
     }
 }
