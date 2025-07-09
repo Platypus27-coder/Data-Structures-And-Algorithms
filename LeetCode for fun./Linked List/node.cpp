@@ -41,7 +41,7 @@ void pushFront(node &head, int data) {
         return;
     }
     newNode->next = head;
-    head = head->next;
+    head = newNode;
 }
 
 void pushBack(node &head, int data) {
