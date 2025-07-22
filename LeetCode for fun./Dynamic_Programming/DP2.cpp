@@ -18,6 +18,9 @@ int solve_DP2(int k) {
 
 int main() {
   cin >> n >> k;
+  for (int i = 0; i < n; i++) {
+      cin >> A[i];
+  }
   cout << solve_DP2(k);
   return 0;
 }
