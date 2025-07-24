@@ -7,7 +7,7 @@ int knapsack(int n, int W, int weight[], int value[]) {
         for (int w = 0; w <= W; w++) {
             DP[i][w] = DP[i - 1][w];
             if (w >= weight[i - 1]) {
-                DP[i][w] = max(DP[i][w], DP[i][w - weight[i - 1]] + value[i - 1]);
+                DP[i][w] = max(DP[i][w], DP[i - 1][w - weight[i - 1]] + value[i - 1]);
             }
         }
     }
