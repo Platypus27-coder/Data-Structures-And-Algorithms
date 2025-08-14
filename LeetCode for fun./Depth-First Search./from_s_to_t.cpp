@@ -9,14 +9,14 @@ vector<int> adj[1005];
 bool visited[1005];
 int parent[1005];
 
-void build(int n) {
+void build(int n, int m) {
     for (int i = 1; i <= n; i++) {
         int x, y;
         cin >> x >> y;
         adj[x].push_back(y);
         adj[y].push_back(x);
     }
-    for (int i = 1; i <= n; i++) {
+    for (int i = 1; i <= m; i++) {
         sort(adj[i].begin(), adj[i].end());
     }
 }
@@ -54,7 +54,7 @@ int main() {
     int m, n, s, t;
     cin >> m >> n;
     cin >> s >> t;
-    build(n);
+    build(n, m);
     dfs(s);
     if (visited[t] == false) {
         cout << "-1\n";
