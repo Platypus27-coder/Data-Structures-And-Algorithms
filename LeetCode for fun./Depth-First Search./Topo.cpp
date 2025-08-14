@@ -6,7 +6,7 @@ using namespace std;
 using ll = long long;
 
 vector<int> adj[1005];
-bool visited[1005];
+int visited[1005];
 stack<int> st;
 
 void build(int n, int m) {
@@ -14,11 +14,8 @@ void build(int n, int m) {
         int x, y;
         cin >> x >> y;
         adj[x].push_back(y);
-        adj[y].push_back(x);
     }
-    for (int i = 1; i <= m; i++) {
-        sort(adj[i].begin(), adj[i].end());
-    }
+    memset(visited, 0, sizeof(visited));
 }
 
 void dfs(int u) {
