@@ -55,9 +55,7 @@ int main() {
     cin >> m >> n;
     cin >> s >> t;
     build(n);
-    for (int i = 1; i <= m; i++) {
-        dfs(i);
-    }
+    dfs(s);
     if (visited[t] == false) {
         cout << "-1\n";
     }
