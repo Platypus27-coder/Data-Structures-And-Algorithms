@@ -28,3 +28,20 @@ void dfs(int u) {
         }
     }
 }
+
+void bfs(int u) {
+    visited[u] = true;
+    queue<int> q;
+    q.push(u);
+    while(!q.empty()) {
+        int x = q.front();
+        cout << x << " ";
+        q.pop();
+        for (int v : adj[x]) {
+            if (!visited[v]) {
+                q.push(v);
+                visited[v] = true;
+            }
+        }
+    }
+}
