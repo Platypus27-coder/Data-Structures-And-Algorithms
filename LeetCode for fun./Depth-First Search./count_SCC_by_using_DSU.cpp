@@ -7,18 +7,20 @@ using ll = long long;
 
 int n, m;
 int parent[1005];
+int sz[1005];
 
 void init() {
     for (int i = 1; i <= n; i++) {
         parent[i] = i;
+        sz[i] = 1;
     }
 }
 
 int find(int u) {
-    while(u != parent[u]) {
-        u = parent[u];
+    if (parent[u] == u) {
+        return u;
     }
-    return u;
+    return parent[u] = find(parent[u]);
 }
 
 bool Union(int u, int v) {
@@ -27,11 +29,13 @@ bool Union(int u, int v) {
     if (u == v) {
         return false;
     }
-    else if (u < v) {
-        parent[v] = u;
+    else if (sz[v] < sz[u]) {
+        parent[u] = v;
+        sz[v] += sz[u];
     }
     else {
-        parent[u] = v;
+        parent[v] = u;
+        sz[u] += sz[v];
     }
     return true;
 }
