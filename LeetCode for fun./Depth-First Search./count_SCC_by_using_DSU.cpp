@@ -29,13 +29,13 @@ bool Union(int u, int v) {
     if (u == v) {
         return false;
     }
-    else if (sz[v] < sz[u]) {
-        parent[u] = v;
-        sz[v] += sz[u];
-    }
-    else {
+    if (sz[u] > sz[v]) {
         parent[v] = u;
         sz[u] += sz[v];
+    }
+    else {
+        parent[u] = v;
+        sz[v] += sz[u];
     }
     return true;
 }
