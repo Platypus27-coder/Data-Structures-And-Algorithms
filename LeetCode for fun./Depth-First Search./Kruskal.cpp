@@ -15,6 +15,16 @@ struct edges {
 
 vector<edges> list_edges;
 
+void in() {
+    cin >> n >> m;
+    for (int i = 0; i < m; i++) {
+        int x, y, w;
+        cin >> x >> y >> y;
+        edges e{x, y, w};
+        list_edges.push_back(e);
+    }
+}
+
 void init() {
     for (int i = 1; i <= n; i++) {
         parent[i] = i;
@@ -70,8 +80,8 @@ void kruskal() {
 }
 
 int main() {
-    cin >> n >> m;
+    in();
     init();
-
+    kruskal();
     return 0;
 }
