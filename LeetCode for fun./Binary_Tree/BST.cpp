@@ -40,3 +40,39 @@ node *insert(node *root, int key) {
     }
     return root;
 }
+
+node *minNode(node *root) {
+    node *temp = root;
+    while(temp != nullptr && temp->left != nullptr) {
+        temp = temp->left;
+    }
+    return temp;
+}
+
+node *deleteNode(node *root, int key) {
+    if (root == nullptr) return root;
+    if (root->data > key) {
+        return deleteNode(root->left, key);
+    }
+    else if (root->data < key) {
+        return deleteNode(root->right, key);
+    }
+    else {
+        if (root->left == nullptr) {
+            node *tmp = root->right;
+            delete root;
+            return tmp;
+        }
+        else if (root->right == nullptr) {
+            node *tmp = root->left;
+            delete root;
+            return tmp;
+        }
+        else {
+            node *tmp = minNode(root->right);
+            root->data = tmp->data;
+            root->right = deleteNode(root->right, tmp->data);
+        }
+        return root;
+    }
+}
