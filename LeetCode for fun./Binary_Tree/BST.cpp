@@ -52,10 +52,10 @@ node *minNode(node *root) {
 node *deleteNode(node *root, int key) {
     if (root == nullptr) return root;
     if (root->data > key) {
-        return deleteNode(root->left, key);
+        root->left = deleteNode(root->left, key);
     }
     else if (root->data < key) {
-        return deleteNode(root->right, key);
+        root->right = deleteNode(root->right, key);
     }
     else {
         if (root->left == nullptr) {
@@ -73,6 +73,6 @@ node *deleteNode(node *root, int key) {
             root->data = tmp->data;
             root->right = deleteNode(root->right, tmp->data);
         }
-        return root;
     }
+    return root;
 }
