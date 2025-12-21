@@ -21,7 +21,7 @@ int isEmpty(Queue *q) {
 
 void put(Queue* q, int value) {
     if (isFull(q)) {
-        return 0;
+        return;
     }
 
     q->tail++;
